@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ProyectoFinalCrespo</string>
+    <string name="usuario_log">Usuario</string>
+    <string name="contraseña_log">Contraseña</string>
+    <string name="inicia">INGRESAR</string>
+    <string name="regis">REGISTRATE</string>
+    <string name="bienvenida">Bienvenido</string>
+    <string name="olvidoPassword">¿Olvidaste tu contraseña?</string>
+    <string name="usuario_reg">Usuario</string>
+    <string name="contraseña_reg">Contraseña</string>
+    <string name="contraseñaRepe_reg">Repetir contraseña</string>
+    <string name="btn_regis">CREAR CUENTA</string>
+    <string name="titulo_registro">REGISTRO</string>
+</resources>

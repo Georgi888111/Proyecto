@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282929"
+    tools:context=".Registrar">
+
+
+    <EditText
+        android:id="@+id/usuario_reg"
+        android:layout_width="273dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="364dp"
+        android:fontFamily="@font/fragmentcore"
+        android:hint="@string/usuario_reg"
+        android:inputType="text"
+        android:textColor="#B5AFAC"
+        android:textColorHighlight="#B5AFAC"
+        android:textColorHint="#B5AFAC"
+        android:textSize="20sp"
+        android:theme="@style/AppTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <EditText
+        android:id="@+id/contraseña_reg"
+        android:layout_width="273dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="292dp"
+        android:fontFamily="@font/fragmentcore"
+        android:hint="@string/contraseña_reg"
+        android:inputType="text|textPassword"
+        android:textColor="#B5AFAC"
+        android:textColorHighlight="#B5AFAC"
+        android:textColorHint="#B5AFAC"
+        android:textSize="20sp"
+        android:theme="@style/AppTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <EditText
+        android:id="@+id/contraseñaRepe_reg"
+        android:layout_width="273dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="220dp"
+        android:fontFamily="@font/fragmentcore"
+        android:hint="@string/contraseñaRepe_reg"
+        android:inputType="text|textPassword"
+        android:textColor="#B5AFAC"
+        android:textColorHighlight="#B5AFAC"
+        android:textColorHint="#B5AFAC"
+        android:textSize="20sp"
+        android:theme="@style/AppTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/btn_regis"
+        android:layout_width="194dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:fontFamily="@font/fragmentcore"
+        android:gravity="center"
+        android:text="@string/btn_regis"
+        android:textColor="@color/colorWhite"
+        android:textSize="17sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaRepe_reg" />
+
+    <TextView
+        android:id="@+id/titulo_registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fragmentcore"
+        android:gravity="center"
+        android:text="@string/titulo_registro"
+        android:textSize="50dp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@+id/usuario_reg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409" />
+
+
+</android.support.constraint.ConstraintLayout>
