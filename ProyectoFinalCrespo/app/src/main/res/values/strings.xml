@@ -11,4 +11,8 @@
     <string name="contraseñaRepe_reg">Repetir contraseña</string>
     <string name="btn_regis">CREAR CUENTA</string>
     <string name="titulo_registro">REGISTRO</string>
+    <string name="btn_alumno">ALUMNO</string>
+    <string name="btn_profesor">PROFESOR</string>
+    <string name="btn_materia">MATERIA</string>
+    <string name="titulo_alumno">Alumno</string>
 </resources>
