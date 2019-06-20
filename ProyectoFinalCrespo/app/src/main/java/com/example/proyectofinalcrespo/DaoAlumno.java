@@ -2,7 +2,10 @@ package com.example.proyectofinalcrespo;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
 
 public class DaoAlumno {
 
@@ -40,5 +43,19 @@ public class DaoAlumno {
         valores.put(DOMIC_ALU, domicilio);
         valores.put(TEL_ALU,telefono);
         db.insert(NOMBRE_TABLA,null,valores);
+    }
+
+    public ArrayList mostrarTodos(){
+      ArrayList<String>alumnos = new ArrayList();
+      String query = "SELECT * FROM Alumno";
+      Cursor registro = db.rawQuery(query,null);
+      if(registro.moveToFirst()){
+          do{
+              alumnos.add((registro.getString(1) )+ " " +(registro.getString(2)) + " Dni: " +(registro.getInt(0)));
+
+          }while(registro.moveToNext());
+      }
+
+      return alumnos;
     }
 }

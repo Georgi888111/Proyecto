@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#282929"
+    android:background="#136595"
     tools:context=".MainActivity">
 
 
     <EditText
-        android:id="@+id/usuario_log"
+        android:id="@+id/apellido_alumno"
         android:layout_width="273dp"
         android:layout_height="42dp"
         android:layout_marginStart="50dp"
@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuario_log"
+        app:layout_constraintTop_toBottomOf="@+id/apellido_alumno"
         app:layout_constraintVertical_bias="0.172" />
 
     <TextView
@@ -128,7 +128,7 @@
         android:text="@string/bienvenida"
         android:textColor="@android:color/white"
         android:textSize="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/usuario_log"
+        app:layout_constraintBottom_toTopOf="@+id/apellido_alumno"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

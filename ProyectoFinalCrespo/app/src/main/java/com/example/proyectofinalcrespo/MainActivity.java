@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         regis = (TextView) findViewById(R.id.regis);
         inicia = (TextView) findViewById(R.id.inicia);
-        usuario_log = (EditText) findViewById(R.id.usuario_log);
+        usuario_log = (EditText) findViewById(R.id.apellido_alumno);
         contraseña_log = (EditText) findViewById(R.id.contraseña_log);
         olvidoPassword = (TextView) findViewById(R.id.olvidoPassword);
         daoUsu = new DaoUsuario(this);

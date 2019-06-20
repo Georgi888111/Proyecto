@@ -15,4 +15,11 @@
     <string name="btn_profesor">PROFESOR</string>
     <string name="btn_materia">MATERIA</string>
     <string name="titulo_alumno">Alumno</string>
+    <string name="tituloAgregaAlumno">Nuevo Alumno</string>
+    <string name="nombre_alumno">Nombre</string>
+    <string name="apellido_alumno">Apellido</string>
+    <string name="dni_alumno">DNI</string>
+    <string name="domicilio_alumno">Domicilio</string>
+    <string name="telefono_alumno">Telefono</string>
+    <string name="btn_agregar">AGREGAR</string>
 </resources>
