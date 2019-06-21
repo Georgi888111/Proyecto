@@ -22,4 +22,6 @@
     <string name="domicilio_alumno">Domicilio</string>
     <string name="telefono_alumno">Telefono</string>
     <string name="btn_agregar">AGREGAR</string>
+    <string name="tituloModificaAlumno">Alumno</string>
+    <string name="busqueda">Buscar</string>
 </resources>

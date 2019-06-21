@@ -1,17 +1,17 @@
-package com.example.proyectofinalcrespo;
+package com.example.proyectofinalcrespo.Profesor;
 
-public class AlumnoModelo {
+import java.io.Serializable;
+
+public class ProfesorModelo implements Serializable {
+
     private String nombre;
     private String apellido;
     private int dni;
     private String domicilio;
     private String telefono;
 
-    public AlumnoModelo() {
 
-    }
-
-    public AlumnoModelo(String nombre, String apellido, int dni, String domicilio, String telefono) {
+    public ProfesorModelo(String nombre, String apellido, int dni, String domicilio, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -19,20 +19,7 @@ public class AlumnoModelo {
         this.telefono = telefono;
     }
 
-    public String getDomicilio() {
-        return domicilio;
-    }
-
-    public void setDomicilio(String domicilio) {
-        this.domicilio = domicilio;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public ProfesorModelo() {
     }
 
     public String getNombre() {
@@ -58,4 +45,22 @@ public class AlumnoModelo {
     public void setDni(int dni) {
         this.dni = dni;
     }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+
 }

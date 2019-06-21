@@ -1,13 +1,14 @@
-package com.example.proyectofinalcrespo;
+package com.example.proyectofinalcrespo.Alumno;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.proyectofinalcrespo.R;
 
 public class AgregarAlumno extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class AgregarAlumno extends AppCompatActivity {
                 }else{
                     int dniFinal = Integer.parseInt(dni);
                     daoAlu.crearAlumno(dniFinal,nombre,apellido,domicilio,telefono);
-                    Intent volverATodosAlu = new Intent(AgregarAlumno.this,Alumno.class);
+                    Intent volverATodosAlu = new Intent(AgregarAlumno.this, Alumno.class);
                     startActivity(volverATodosAlu);
                 }
             }

@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.proyectofinalcrespo.Alumno.DaoAlumno;
+import com.example.proyectofinalcrespo.Usuario.DaoUsuario;
+
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     public static String NOMBRE_BD = "Colegio.db";

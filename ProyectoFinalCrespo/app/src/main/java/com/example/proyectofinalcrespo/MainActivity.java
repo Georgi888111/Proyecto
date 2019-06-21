@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.proyectofinalcrespo.Usuario.DaoUsuario;
+import com.example.proyectofinalcrespo.Usuario.Registrar;
+
 
 public class MainActivity extends AppCompatActivity {
     TextView regis;

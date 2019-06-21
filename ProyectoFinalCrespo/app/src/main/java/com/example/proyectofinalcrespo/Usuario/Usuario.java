@@ -1,4 +1,4 @@
-package com.example.proyectofinalcrespo;
+package com.example.proyectofinalcrespo.Usuario;
 
 public class Usuario {
     private int id_usuario;

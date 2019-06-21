@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".AgregarAlumno"></activity>
-        <activity android:name=".Alumno" />
+        <activity android:name=".Alumno.AlumnoUpdate"></activity>
+        <activity android:name=".Alumno.AgregarAlumno" />
+        <activity android:name=".Alumno.Alumno" />
         <activity android:name=".Home" />
-        <activity android:name=".Registrar" />
+        <activity android:name=".Usuario.Registrar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

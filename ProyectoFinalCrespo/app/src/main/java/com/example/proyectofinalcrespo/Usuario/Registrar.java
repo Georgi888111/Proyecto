@@ -1,4 +1,4 @@
-package com.example.proyectofinalcrespo;
+package com.example.proyectofinalcrespo.Usuario;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.proyectofinalcrespo.Home;
+import com.example.proyectofinalcrespo.R;
 
 public class Registrar extends AppCompatActivity implements  View.OnClickListener {
 

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.proyectofinalcrespo.Alumno.Alumno;
+
 public class Home extends AppCompatActivity {
     TextView btn_alumno,btn_profesor,btn_materia;
 
@@ -21,7 +23,7 @@ public class Home extends AppCompatActivity {
         btn_alumno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentAlu = new Intent(Home.this,Alumno.class);
+                Intent intentAlu = new Intent(Home.this, Alumno.class);
                 startActivity(intentAlu);
             }
         });
