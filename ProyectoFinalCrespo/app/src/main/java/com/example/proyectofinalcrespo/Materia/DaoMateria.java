@@ -28,8 +28,8 @@ public class DaoMateria {
         public static final String CREATE_TABLE = "CREATE TABLE " + NOMBRE_TABLA + " ("
                 + COD_MAT + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + DESCR_MAT + " text not null, "
-                + CANT_HORAS + " text not null,"
-                + DNI_PROF + " text);";
+                + CANT_HORAS + " integer not null,"
+                + DNI_PROF + " integer text);";
 
 
 
@@ -61,10 +61,10 @@ public class DaoMateria {
             if(registro.moveToFirst()){
                 do{
                     MateriaModelo mateMode= new MateriaModelo();
-                    ProfesorModelo modeProf = new ProfesorModelo();
+                    mateMode.setCodigo(registro.getInt(0));
                     mateMode.setDescripcion(registro.getString(1));
                     mateMode.setCantHoras(registro.getInt(2));
-                    mateMode.getProfeMode().setDni(registro.getInt(3));
+                    mateMode.setDniProf(registro.getInt(3));
                     materias.add(mateMode);
 
                 }while(registro.moveToNext());
@@ -92,4 +92,20 @@ public class DaoMateria {
 
         return profesores;
     }
+
+
+    public int actualizar(MateriaModelo materiaModelo){
+        ContentValues valores = new ContentValues();
+        valores.put(DESCR_MAT,materiaModelo.getDescripcion());
+        valores.put(CANT_HORAS,materiaModelo.getCantHoras());
+        valores.put(DNI_PROF,materiaModelo.getDniProf());
+
+        return db.update(NOMBRE_TABLA,valores,"codigo=?",new String []{String.valueOf(materiaModelo.getCodigo())});
+    }
+
+    public int eliminar(int codigo){
+
+        return db.delete(NOMBRE_TABLA,"codigo=?", new String []{String.valueOf(codigo)});
+    }
+
 }

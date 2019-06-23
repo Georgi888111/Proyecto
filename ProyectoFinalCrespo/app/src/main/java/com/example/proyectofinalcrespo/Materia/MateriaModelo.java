@@ -1,23 +1,42 @@
 package com.example.proyectofinalcrespo.Materia;
 
-import com.example.proyectofinalcrespo.Profesor.ProfesorModelo;
 
-public class MateriaModelo {
+import java.io.Serializable;
+
+public class MateriaModelo implements Serializable {
 
     private int codigo;
     private String descripcion;
     private int cantHoras;
-    private ProfesorModelo profeMode;
+    private int dniProf;
 
 
     public MateriaModelo() {
     }
 
-    public MateriaModelo(int codigo, String descripcion, int cantHoras, ProfesorModelo profeMode) {
+    public MateriaModelo(int codigo, String descripcion, int cantHoras,int dniProf) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.cantHoras = cantHoras;
-        this.profeMode = profeMode;
+        this.dniProf = dniProf;
+
+    }
+
+    public MateriaModelo(String descripcion, int cantHoras,int dniProf, int codigo) {
+        this.descripcion = descripcion;
+        this.cantHoras = cantHoras;
+        this.dniProf = dniProf;
+        this.codigo = codigo;
+
+
+    }
+
+    public int getDniProf() {
+        return dniProf;
+    }
+
+    public void setDniProf(int dniProf) {
+        this.dniProf = dniProf;
     }
 
     public int getCodigo() {
@@ -44,11 +63,10 @@ public class MateriaModelo {
         this.cantHoras = cantHoras;
     }
 
-    public ProfesorModelo getProfeMode() {
-        return profeMode;
-    }
 
-    public void setProfeMode(ProfesorModelo profeMode) {
-        this.profeMode = profeMode;
+
+    @Override
+    public String toString() {
+        return descripcion;
     }
 }

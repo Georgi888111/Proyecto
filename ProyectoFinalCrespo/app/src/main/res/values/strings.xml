@@ -35,8 +35,21 @@
     <string name="tituloModificaProfesor">Profesor</string>
     <string name="titulo_materia">Materias</string>
     <string name="tituloAgregaMateria">Nueva Materia</string>
-    <string name="descripcion">Descripcion</string>
+    <string name="descripcion">Materia</string>
     <string name="cantHoras">Cantidad de horas</string>
-    <string name="muestraNombreProf">Profesor</string>
+    <string name="dniProfesor">Profesor</string>
+    <string name="muestraNombreProf">Nombre Profesor</string>
+    <string name="tituloModificaMateria">Materia</string>
+    <string name="codigoMateria">Codigo</string>
+    <string name="titulo_nota">Nota</string>
+    <string name="tituloAgregaNota">Nueva Nota</string>
+    <string name="nota">Nota</string>
+    <string name="nombreMateria">Materia</string>
+    <string name="alumnoDni">Alumno</string>
+    <string name="tituloModificaNota">Nota</string>
+    <string name="codigoNota">Codigo</string>
+    <string name="horas">Horas</string>
+    <string name="nombreProfesor">Profesor</string>
+    <string name="codigoCod">Codigo</string>
 
 </resources>

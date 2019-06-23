@@ -54,7 +54,7 @@ public class ProfesorUpdate extends AppCompatActivity {
                 int result = daoProf.actualizar(profesorModelo);
 
                 if(result>0){
-                    Toast.makeText(ProfesorUpdate.this,"Alumno modificado",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfesorUpdate.this,"Profesor modificado",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ProfesorUpdate.this, Profesor.class);
                     startActivity(intent);
                 }else{
@@ -71,7 +71,7 @@ public class ProfesorUpdate extends AppCompatActivity {
                 int dniProf = Integer.parseInt(dni);
                 int result = daoProf.eliminar(dniProf);
                 if(result>0){
-                    Toast.makeText(ProfesorUpdate.this,"Alumno Eliminado",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfesorUpdate.this,"Profesor Eliminado",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ProfesorUpdate.this, Profesor.class);
                     startActivity(intent);
                 }else{

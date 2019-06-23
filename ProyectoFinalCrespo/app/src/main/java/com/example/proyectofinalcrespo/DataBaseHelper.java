@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.proyectofinalcrespo.Alumno.DaoAlumno;
 import com.example.proyectofinalcrespo.Materia.DaoMateria;
+import com.example.proyectofinalcrespo.Nota.DaoNota;
 import com.example.proyectofinalcrespo.Profesor.DaoProfesor;
 import com.example.proyectofinalcrespo.Usuario.DaoUsuario;
 
@@ -25,6 +26,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     db.execSQL(DaoAlumno.CREATE_TABLE);
     db.execSQL(DaoProfesor.CREATE_TABLE);
     db.execSQL(DaoMateria.CREATE_TABLE);
+    db.execSQL(DaoNota.CREATE_TABLE);
     }
 
     @Override

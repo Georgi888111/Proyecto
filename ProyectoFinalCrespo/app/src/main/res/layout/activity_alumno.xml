@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/titulo_alumno"
-        android:layout_width="126dp"
-        android:layout_height="55dp"
+        android:layout_width="162dp"
+        android:layout_height="63dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/fragmentcore"
         android:gravity="center"
@@ -78,7 +78,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/fragmentcore"
         android:hint="@string/busqueda"
-        android:inputType="text"
+        android:inputType="number"
         android:textColor="@color/colorWhite"
         android:textColorHighlight="#B5AFAC"
         android:textColorHint="@color/colorPrimary"

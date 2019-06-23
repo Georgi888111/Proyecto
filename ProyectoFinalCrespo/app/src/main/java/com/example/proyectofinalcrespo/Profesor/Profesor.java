@@ -1,27 +1,24 @@
 package com.example.proyectofinalcrespo.Profesor;
 
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-
 import com.example.proyectofinalcrespo.R;
-
 import java.util.ArrayList;
 
 public class Profesor extends AppCompatActivity {
-    ImageView agregar, eliminar ,editar, buscar;
+
+    ImageView agregar, buscar;
     EditText busqueda;
-
-
+    ProfesoresAdapter adapter;
     ListView listaProfesores;
     ArrayList<ProfesorModelo>profesores = new ArrayList();
-    ArrayAdapter<ProfesorModelo> arrayAdapter;
     DaoProfesor daoProfe;
 
 
@@ -31,11 +28,14 @@ public class Profesor extends AppCompatActivity {
         setContentView(R.layout.activity_profesor);
         agregar = (ImageView)findViewById(R.id.imgAgregar);
         listaProfesores = (ListView) findViewById(R.id.todosProfesores);
-
-
         daoProfe = new DaoProfesor(this);
         profesores = daoProfe.mostrarTodos();
+        busqueda = (EditText) findViewById(R.id.busqueda);
+        buscar = (ImageView)findViewById(R.id.buscar);
 
+
+        adapter = new ProfesoresAdapter(this,profesores);
+        listaProfesores.setAdapter(adapter);
 
 
         agregar.setOnClickListener(new View.OnClickListener() {
@@ -46,8 +46,19 @@ public class Profesor extends AppCompatActivity {
 
             }
         });
-        arrayAdapter = new ArrayAdapter<ProfesorModelo>(this,android.R.layout.simple_list_item_1,profesores);
-        listaProfesores.setAdapter(arrayAdapter);
+
+         buscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            String buscado = busqueda.getText().toString();
+            ProfesorModelo profesorModelo;
+                profesorModelo= daoProfe.buscar(buscado);
+                Intent intentUpdateProfesor = new Intent(Profesor.this, ProfesorUpdate.class);
+                intentUpdateProfesor.putExtra("Profesor",profesorModelo);
+                startActivity(intentUpdateProfesor);
+            }
+        });
+
 
         listaProfesores.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -63,4 +74,9 @@ public class Profesor extends AppCompatActivity {
 
 
     }
-}
+
+
+
+
+    }
+

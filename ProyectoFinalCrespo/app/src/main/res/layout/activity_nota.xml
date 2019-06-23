@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#71C3F3"
-    tools:context=".Alumno.Alumno">
+    tools:context=".Nota.Nota">
 
     <TextView
-        android:id="@+id/titulo_profesor"
-        android:layout_width="160dp"
-        android:layout_height="52dp"
+        android:id="@+id/titulo_nota"
+        android:layout_width="126dp"
+        android:layout_height="55dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/fragmentcore"
         android:gravity="center"
-        android:text="@string/titulo_profesor"
+        android:text="@string/titulo_nota"
         android:textColor="@color/colorPrimary"
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/todosProfesores"
+        android:id="@+id/todasNotas"
         android:layout_width="332dp"
         android:layout_height="327dp"
         android:layout_marginStart="8dp"
@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo_profesor"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_nota"
         app:layout_constraintVertical_bias="0.164" />
 
     <ImageView
@@ -78,7 +78,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/fragmentcore"
         android:hint="@string/busqueda"
-        android:inputType="number"
+        android:inputType="text"
         android:textColor="@color/colorWhite"
         android:textColorHighlight="#B5AFAC"
         android:textColorHint="@color/colorPrimary"
@@ -91,3 +91,4 @@
 
 
 </android.support.constraint.ConstraintLayout>
+

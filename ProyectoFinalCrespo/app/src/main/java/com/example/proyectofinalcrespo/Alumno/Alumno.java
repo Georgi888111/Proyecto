@@ -19,16 +19,11 @@ public class Alumno extends AppCompatActivity {
 
 
     ListView listaAlumnos;
-
-
     ArrayList<AlumnoModelo> alumnos = new ArrayList();
-
-    ArrayAdapter<AlumnoModelo> arrayAdapter;
-
     DaoAlumno daoAlu;
     ImageView agregar, eliminar ,editar, buscar;
     EditText busqueda;
-
+    AlumnosAdapter adapter;
 
 
 
@@ -47,22 +42,20 @@ public class Alumno extends AppCompatActivity {
         daoAlu = new DaoAlumno(this);
         alumnos = daoAlu.mostrarTodos();
 
+        adapter = new AlumnosAdapter(this,alumnos);
+        listaAlumnos.setAdapter(adapter);
 
-        arrayAdapter = new ArrayAdapter<AlumnoModelo>(this,android.R.layout.simple_list_item_1,alumnos);
-        listaAlumnos.setAdapter(arrayAdapter);
-
-
-     /* buscar.setOnClickListener(new View.OnClickListener() {
+        buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            String buscado = busqueda.getText().toString();
-            AlumnoModelo aluMode = new AlumnoModelo();
-                aluMode= daoAlu.buscar(buscado);
-                Intent intent = new Intent(Alumno.this, AlumnoUpdate.class);
-                intent.putExtra("AlumnoDos",aluMode);
-                startActivity(intent);
+                String buscado = busqueda.getText().toString();
+                AlumnoModelo alumnoModelo;
+                alumnoModelo= daoAlu.buscar(buscado);
+                Intent intentUpdateAlumno = new Intent(Alumno.this, AlumnoUpdate.class);
+                intentUpdateAlumno.putExtra("Alumno",alumnoModelo);
+                startActivity(intentUpdateAlumno);
             }
-        });*/
+        });
 
 
         agregar.setOnClickListener(new View.OnClickListener() {

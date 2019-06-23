@@ -67,4 +67,6 @@ public class ProfesorModelo implements Serializable {
     public String toString() {
         return nombre + " " + apellido + " DNI: " + dni;
     }
+
+
 }

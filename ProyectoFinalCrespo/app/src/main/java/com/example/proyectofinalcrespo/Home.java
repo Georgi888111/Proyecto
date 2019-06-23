@@ -8,10 +8,11 @@ import android.widget.TextView;
 
 import com.example.proyectofinalcrespo.Alumno.Alumno;
 import com.example.proyectofinalcrespo.Materia.Materia;
+import com.example.proyectofinalcrespo.Nota.Nota;
 import com.example.proyectofinalcrespo.Profesor.Profesor;
 
 public class Home extends AppCompatActivity {
-    TextView btn_alumno,btn_profesor,btn_materia;
+    TextView btn_alumno,btn_profesor,btn_materia,btn_nota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,8 @@ public class Home extends AppCompatActivity {
         btn_alumno=(TextView)findViewById(R.id.btn_alumno);
         btn_profesor=(TextView)findViewById(R.id.btn_profesor);
         btn_materia=(TextView)findViewById(R.id.btn_materia);
+        btn_nota = (TextView)findViewById(R.id.btn_nota);
+
 
         btn_alumno.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +49,13 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        btn_nota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentNota = new Intent(Home.this, Nota.class);
+                startActivity(intentNota);
+            }
+        });
     }
 
 }

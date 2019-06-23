@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Materia.AgregarMateria"></activity>
+        <activity android:name=".Nota.NotaUpdate"></activity>
+        <activity android:name=".Nota.AgregarNota" />
+        <activity android:name=".Nota.Nota" />
+        <activity android:name=".Materia.MateriaUpdate" />
+        <activity android:name=".Materia.AgregarMateria" />
         <activity android:name=".Materia.Materia" />
         <activity android:name=".Profesor.ProfesorUpdate" />
         <activity android:name=".Profesor.AgregarProf" />

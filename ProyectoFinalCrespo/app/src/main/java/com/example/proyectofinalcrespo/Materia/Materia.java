@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -16,7 +17,9 @@ public class Materia extends AppCompatActivity {
 
     ListView listaMaterias;
     ImageView agregar;
+    MateriasAdapter adapter;
     ArrayList<MateriaModelo> materias = new ArrayList();
+
 
     ArrayAdapter<MateriaModelo> arrayAdapter;
 
@@ -28,14 +31,15 @@ public class Materia extends AppCompatActivity {
         setContentView(R.layout.activity_materia);
 
         listaMaterias = (ListView) findViewById(R.id.todasMaterias);
-       agregar = (ImageView) findViewById(R.id.imgAgregar);
+        agregar = (ImageView) findViewById(R.id.imgAgregar);
 
         daoMate = new DaoMateria(this);
         materias = daoMate.mostrarTodos();
 
+        adapter = new MateriasAdapter(this,materias);
+        listaMaterias.setAdapter(adapter);
 
-        arrayAdapter = new ArrayAdapter<MateriaModelo>(this,android.R.layout.simple_list_item_1,materias);
-        listaMaterias.setAdapter(arrayAdapter);
+
 
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +49,17 @@ public class Materia extends AppCompatActivity {
             }
         });
 
+        listaMaterias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                MateriaModelo mateMode = materias.get(position);
+                Intent intentUpdateMateria = new Intent(Materia.this,MateriaUpdate.class);
+                intentUpdateMateria.putExtra("Materia", mateMode);
+                startActivity(intentUpdateMateria);
+
+            }
+        });
 
 
     }

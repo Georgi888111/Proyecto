@@ -18,6 +18,7 @@ public class AgregarProf extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_prof);
+
         agregar = (TextView)findViewById(R.id.btn_agregar);
         nombreProfesor = (EditText) findViewById(R.id.nombre_prof);
         apellidoProfesor = (EditText) findViewById(R.id.apellido_prof);
@@ -25,6 +26,7 @@ public class AgregarProf extends AppCompatActivity {
         domicilioProfesor = (EditText)findViewById(R.id.domicilio_prof);
         telefonoProfesor = (EditText)findViewById(R.id.telefono_prof);
         daoProfesor = new DaoProfesor(this);
+
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,8 +41,8 @@ public class AgregarProf extends AppCompatActivity {
                 }else{
                     int dniFinal = Integer.parseInt(dni);
                     daoProfesor.crearProfesor(dniFinal,nombre,apellido,domicilio,telefono);
-                    Intent volverATodosAlu = new Intent(AgregarProf.this, Profesor.class);
-                    startActivity(volverATodosAlu);
+                    Intent volverATodosProf = new Intent(AgregarProf.this, Profesor.class);
+                    startActivity(volverATodosProf);
                 }
             }
         });

@@ -95,44 +95,27 @@ public class DaoAlumno {
         return db.delete(NOMBRE_TABLA,"dni=?", new String []{String.valueOf(dni)});
     }
 
+    public AlumnoModelo buscar(String dni) {
+        AlumnoModelo alumnoModelo = new AlumnoModelo();
 
-   /* public AlumnoModelo buscarPorApellido(String dato){
+
+        Cursor c = db.rawQuery("SELECT * from Alumno where dni =" + dni, null);
+        if (c.moveToFirst()) {
+            do {
+                alumnoModelo.setDni(c.getInt(0));
+                alumnoModelo.setNombre(c.getString(1));
+                alumnoModelo.setApellido(c.getString(2));
+                alumnoModelo.setDomicilio(c.getString(3));
+                alumnoModelo.setTelefono(c.getString(4));
+
+            } while (c.moveToNext());
 
 
-      AlumnoModelo aluMode = new AlumnoModelo();
-      int datoDni = Integer.parseInt(dato);
-      String query = "SELECT * FROM " + NOMBRE_TABLA + " WHERE " + DNI_ALU + " = " + datoDni;
-      Cursor registro = db.rawQuery(query,null);
-
-      if(registro.moveToFirst()){
-          aluMode.getDni();
-          aluMode.getNombre();
-          aluMode.getApellido();
-          aluMode.getDomicilio();
-          aluMode.getTelefono();
-
-      }
-
-    return aluMode;
+        }
+        return alumnoModelo;
 
     }
 
-   public AlumnoModelo buscar(String dni){
-       AlumnoModelo aluMode = new AlumnoModelo();
-       String[] argsel = {dni};
-       String[] projection = {DNI_ALU,NOMBRE_ALU,APE_ALU,DOMIC_ALU,TEL_ALU};
-       Cursor c = db.query(NOMBRE_TABLA, projection, DNI_ALU+"=?",argsel,null,null,null);
-
-       c.moveToFirst();
-       aluMode.getDni();
-       aluMode.getNombre();
-       aluMode.getApellido();
-       aluMode.getDomicilio();
-       aluMode.getTelefono();
-
-       return aluMode;
-
-   }*/
 
    }
 
