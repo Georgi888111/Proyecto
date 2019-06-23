@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#71C3F3"
+    tools:context=".Materia.Materia">
+
+    <TextView
+        android:id="@+id/titulo_materia"
+        android:layout_width="126dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/fragmentcore"
+        android:gravity="center"
+        android:text="@string/titulo_materia"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/todasMaterias"
+        android:layout_width="332dp"
+        android:layout_height="327dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fragmentcore"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_materia"
+        app:layout_constraintVertical_bias="0.164" />
+
+    <ImageView
+        android:id="@+id/imgAgregar"
+        android:layout_width="31dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.903"
+        app:srcCompat="@drawable/agregar" />
+
+    <ImageView
+        android:id="@+id/buscar"
+        android:layout_width="31dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgAgregar"
+        app:layout_constraintStart_toEndOf="@+id/busqueda"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904"
+        app:srcCompat="@drawable/busqueda" />
+
+    <EditText
+        android:id="@+id/busqueda"
+        android:layout_width="215dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fragmentcore"
+        android:hint="@string/busqueda"
+        android:inputType="text"
+        android:textColor="@color/colorWhite"
+        android:textColorHighlight="#B5AFAC"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="20sp"
+        android:theme="@style/AppTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
+
+
+</android.support.constraint.ConstraintLayout>

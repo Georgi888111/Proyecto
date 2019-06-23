@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.proyectofinalcrespo.Alumno.DaoAlumno;
+import com.example.proyectofinalcrespo.Materia.DaoMateria;
+import com.example.proyectofinalcrespo.Profesor.DaoProfesor;
 import com.example.proyectofinalcrespo.Usuario.DaoUsuario;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
@@ -21,6 +23,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
     db.execSQL(DaoUsuario.CREATE_TABLE);
     db.execSQL(DaoAlumno.CREATE_TABLE);
+    db.execSQL(DaoProfesor.CREATE_TABLE);
+    db.execSQL(DaoMateria.CREATE_TABLE);
     }
 
     @Override

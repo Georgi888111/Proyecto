@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.proyectofinalcrespo.Alumno.Alumno;
+import com.example.proyectofinalcrespo.Materia.Materia;
+import com.example.proyectofinalcrespo.Profesor.Profesor;
 
 public class Home extends AppCompatActivity {
     TextView btn_alumno,btn_profesor,btn_materia;
@@ -25,6 +27,22 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentAlu = new Intent(Home.this, Alumno.class);
                 startActivity(intentAlu);
+            }
+        });
+
+        btn_profesor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentProf = new Intent(Home.this, Profesor.class);
+                startActivity(intentProf);
+            }
+        });
+
+        btn_materia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentMate = new Intent(Home.this, Materia.class);
+                startActivity(intentMate);
             }
         });
 

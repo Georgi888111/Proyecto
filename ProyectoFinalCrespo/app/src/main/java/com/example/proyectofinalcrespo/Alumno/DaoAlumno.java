@@ -4,8 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-import com.example.proyectofinalcrespo.Alumno.AlumnoModelo;
 import com.example.proyectofinalcrespo.DataBaseHelper;
 
 import java.util.ArrayList;
@@ -97,9 +95,13 @@ public class DaoAlumno {
         return db.delete(NOMBRE_TABLA,"dni=?", new String []{String.valueOf(dni)});
     }
 
-    public AlumnoModelo buscarPorApellido(String dato){
+
+   /* public AlumnoModelo buscarPorApellido(String dato){
+
+
       AlumnoModelo aluMode = new AlumnoModelo();
-      String query = "SELECT * FROM " + NOMBRE_TABLA + " WHERE " + APE_ALU + " = " + dato;
+      int datoDni = Integer.parseInt(dato);
+      String query = "SELECT * FROM " + NOMBRE_TABLA + " WHERE " + DNI_ALU + " = " + datoDni;
       Cursor registro = db.rawQuery(query,null);
 
       if(registro.moveToFirst()){
@@ -114,4 +116,23 @@ public class DaoAlumno {
     return aluMode;
 
     }
-}
+
+   public AlumnoModelo buscar(String dni){
+       AlumnoModelo aluMode = new AlumnoModelo();
+       String[] argsel = {dni};
+       String[] projection = {DNI_ALU,NOMBRE_ALU,APE_ALU,DOMIC_ALU,TEL_ALU};
+       Cursor c = db.query(NOMBRE_TABLA, projection, DNI_ALU+"=?",argsel,null,null,null);
+
+       c.moveToFirst();
+       aluMode.getDni();
+       aluMode.getNombre();
+       aluMode.getApellido();
+       aluMode.getDomicilio();
+       aluMode.getTelefono();
+
+       return aluMode;
+
+   }*/
+
+   }
+

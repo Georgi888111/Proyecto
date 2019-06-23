@@ -13,8 +13,9 @@
     <string name="titulo_registro">REGISTRO</string>
     <string name="btn_alumno">ALUMNO</string>
     <string name="btn_profesor">PROFESOR</string>
-    <string name="btn_materia">MATERIA</string>
-    <string name="titulo_alumno">Alumno</string>
+    <string name="btn_materia">MATERIAS</string>
+    <string name="btn_nota">NOTAS</string>
+    <string name="titulo_alumno">Alumnos</string>
     <string name="tituloAgregaAlumno">Nuevo Alumno</string>
     <string name="nombre_alumno">Nombre</string>
     <string name="apellido_alumno">Apellido</string>
@@ -24,4 +25,18 @@
     <string name="btn_agregar">AGREGAR</string>
     <string name="tituloModificaAlumno">Alumno</string>
     <string name="busqueda">Buscar</string>
+    <string name="titulo_profesor">Profesores</string>
+    <string name="nombre_prof">Nombre</string>
+    <string name="apellido_prof">Apellido</string>
+    <string name="dni_prof">DNI</string>
+    <string name="domicilio_prof">Domicilio</string>
+    <string name="telefono_prof">Telefono</string>
+    <string name="tituloAgregaProf">Nuevo Profesor</string>
+    <string name="tituloModificaProfesor">Profesor</string>
+    <string name="titulo_materia">Materias</string>
+    <string name="tituloAgregaMateria">Nueva Materia</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="cantHoras">Cantidad de horas</string>
+    <string name="muestraNombreProf">Profesor</string>
+
 </resources>

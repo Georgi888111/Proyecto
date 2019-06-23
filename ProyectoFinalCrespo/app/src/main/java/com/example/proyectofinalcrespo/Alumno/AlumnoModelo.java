@@ -63,6 +63,6 @@ public class AlumnoModelo implements Serializable {
 
     @Override
     public String toString() {
-        return nombre + " DNI: " + dni;
+        return nombre + apellido + " DNI: " + dni;
     }
 }

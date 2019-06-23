@@ -62,5 +62,9 @@ public class ProfesorModelo implements Serializable {
         this.telefono = telefono;
     }
 
+    @Override
 
+    public String toString() {
+        return nombre + " " + apellido + " DNI: " + dni;
+    }
 }

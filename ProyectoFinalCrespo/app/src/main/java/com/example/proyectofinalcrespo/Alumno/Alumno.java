@@ -52,19 +52,19 @@ public class Alumno extends AppCompatActivity {
         listaAlumnos.setAdapter(arrayAdapter);
 
 
-      /*  buscar.setOnClickListener(new View.OnClickListener() {
+     /* buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             String buscado = busqueda.getText().toString();
             AlumnoModelo aluMode = new AlumnoModelo();
-                aluMode= daoAlu.buscarPorApellido(buscado);
+                aluMode= daoAlu.buscar(buscado);
                 Intent intent = new Intent(Alumno.this, AlumnoUpdate.class);
-                intent.putExtra("Alumno",aluMode);
+                intent.putExtra("AlumnoDos",aluMode);
                 startActivity(intent);
             }
-        });
+        });*/
 
-*/
+
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

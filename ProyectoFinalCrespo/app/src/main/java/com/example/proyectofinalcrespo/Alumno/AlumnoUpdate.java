@@ -31,13 +31,16 @@ public class AlumnoUpdate extends AppCompatActivity {
         editar = (ImageView)findViewById(R.id.imgEditar);
         eliminar =(ImageView)findViewById(R.id.imgEliminar);
 
+
         AlumnoModelo aluMode = (AlumnoModelo)getIntent().getExtras().getSerializable("Alumno");
+
 
         nombreAumno.setText(aluMode.getNombre());
         domicilioAlumno.setText(aluMode.getDomicilio());
         apellidoAlumno.setText(aluMode.getApellido());
         dniAlumno.setText(String.valueOf(aluMode.getDni()));
         telefonoAlumno.setText(aluMode.getTelefono());
+
 
         editar.setOnClickListener(new View.OnClickListener() {
             @Override
