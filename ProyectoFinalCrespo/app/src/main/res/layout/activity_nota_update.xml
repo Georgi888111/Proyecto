@@ -29,8 +29,8 @@
 
     <EditText
         android:id="@+id/nota"
-        android:layout_width="273dp"
-        android:layout_height="42dp"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="152dp"
@@ -47,12 +47,13 @@
         android:theme="@style/AppTheme"
         app:layout_constraintBottom_toTopOf="@+id/materiasNombres"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.755"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.534" />
+        app:layout_constraintVertical_bias="0.628" />
 
     <EditText
-        android:id="@+id/codigoNota"
+        android:id="@+id/nombreAlumnoDni"
         android:layout_width="273dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -62,7 +63,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/fragmentcore"
-        android:hint="@string/codigoNota"
+        android:hint="@string/nombreAlumnoDni"
         android:inputType="number"
         android:textColor="@color/colorPrimary"
         android:textColorHighlight="#B5AFAC"
@@ -93,7 +94,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/alumnoDni"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.958" />
@@ -110,7 +111,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/alumnosDni"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintHorizontal_bias="0.766"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.963" />
@@ -132,7 +133,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.603" />
@@ -141,7 +142,6 @@
         android:id="@+id/alumnosDni"
         android:layout_width="177dp"
         android:layout_height="26dp"
-
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -150,7 +150,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintHorizontal_bias="0.377"
         app:layout_constraintStart_toEndOf="@+id/alumnoDni"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6" />
@@ -190,5 +190,95 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.932"
         app:srcCompat="@drawable/eliminar" />
+
+    <TextView
+        android:id="@+id/notaString"
+        android:layout_width="69dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fragmentcore"
+        android:text="@string/notaString"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="#B5AFAC"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nota"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloModificaNota"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <TextView
+        android:id="@+id/codigoNota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fragmentcore"
+        android:text="@string/codigoNota"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="#B5AFAC"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/notaString"
+        app:layout_constraintEnd_toStartOf="@+id/codigoCod"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloModificaNota"
+        app:layout_constraintVertical_bias="0.742" />
+
+    <EditText
+        android:id="@+id/codigoCod"
+        android:layout_width="189dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fragmentcore"
+        android:hint="@string/codigoCod"
+        android:inputType="number"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="#B5AFAC"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="20sp"
+        android:theme="@style/AppTheme"
+        app:layout_constraintBottom_toTopOf="@+id/materiasNombres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.751"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171" />
+
+    <ImageView
+        android:id="@+id/volver"
+        android:layout_width="31dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/volver" />
+
 
 </android.support.constraint.ConstraintLayout>

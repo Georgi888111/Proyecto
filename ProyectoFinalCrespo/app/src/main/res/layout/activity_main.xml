@@ -48,7 +48,6 @@
         android:textColorHint="@color/colorWhite"
         android:textSize="20sp"
         android:theme="@style/AppTheme"
-
         app:layout_constraintBottom_toTopOf="@+id/inicia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

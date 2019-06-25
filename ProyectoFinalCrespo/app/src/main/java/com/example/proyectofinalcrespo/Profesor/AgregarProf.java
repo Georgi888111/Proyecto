@@ -5,15 +5,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.proyectofinalcrespo.R;
 
 public class AgregarProf extends AppCompatActivity {
-    DaoProfesor daoProfesor;
-    TextView agregar;
-    EditText nombreProfesor,domicilioProfesor,apellidoProfesor,telefonoProfesor,dniProfesor;
+
+    private DaoProfesor daoProfesor;
+    private TextView agregar;
+    private EditText nombreProfesor,domicilioProfesor,apellidoProfesor,telefonoProfesor,dniProfesor;
+    private ImageView volver;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,7 @@ public class AgregarProf extends AppCompatActivity {
         dniProfesor = (EditText)findViewById(R.id.dni_prof);
         domicilioProfesor = (EditText)findViewById(R.id.domicilio_prof);
         telefonoProfesor = (EditText)findViewById(R.id.telefono_prof);
+        volver = (ImageView) findViewById(R.id.volver);
         daoProfesor = new DaoProfesor(this);
 
         agregar.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +49,14 @@ public class AgregarProf extends AppCompatActivity {
                     Intent volverATodosProf = new Intent(AgregarProf.this, Profesor.class);
                     startActivity(volverATodosProf);
                 }
+            }
+        });
+
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent vuelveProf = new Intent(AgregarProf.this, Profesor.class);
+                startActivity(vuelveProf);
             }
         });
 

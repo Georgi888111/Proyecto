@@ -12,7 +12,8 @@ import com.example.proyectofinalcrespo.Nota.Nota;
 import com.example.proyectofinalcrespo.Profesor.Profesor;
 
 public class Home extends AppCompatActivity {
-    TextView btn_alumno,btn_profesor,btn_materia,btn_nota;
+
+    private TextView btn_alumno,btn_profesor,btn_materia,btn_nota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

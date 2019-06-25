@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class DaoNota {
 
-    ArrayList<NotaModelo> notas = new ArrayList();
-    ArrayList<MateriaModelo>materias= new ArrayList();
-    ArrayList<AlumnoModelo>alumnos = new ArrayList<>();
+    private ArrayList<NotaModelo> notas = new ArrayList();
+    private ArrayList<MateriaModelo>materias= new ArrayList();
+    private ArrayList<AlumnoModelo>alumnos = new ArrayList<>();
 
 
     public static final String NOMBRE_TABLA = "Nota";
@@ -125,6 +125,27 @@ public class DaoNota {
     public int eliminar(int codigo){
 
         return db.delete(NOMBRE_TABLA,"codigo=?", new String []{String.valueOf(codigo)});
+    }
+
+    public NotaModelo buscar(String codigo) {
+        NotaModelo notaModelo = new NotaModelo();
+
+
+        Cursor c = db.rawQuery("SELECT * from Nota where codigo =" + codigo, null);
+        if (c.moveToFirst()) {
+            do {
+                notaModelo.setCodigo(c.getInt(0));
+                notaModelo.setNota(c.getInt(1));
+                notaModelo.setMateria(c.getString(2));
+                notaModelo.setDniAlu(c.getInt(3));
+
+
+            } while (c.moveToNext());
+
+
+        }
+        return notaModelo;
+
     }
 
 }

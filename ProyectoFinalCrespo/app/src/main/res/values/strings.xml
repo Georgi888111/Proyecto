@@ -47,9 +47,11 @@
     <string name="nombreMateria">Materia</string>
     <string name="alumnoDni">Alumno</string>
     <string name="tituloModificaNota">Nota</string>
-    <string name="codigoNota">Codigo</string>
+    <string name="nombreAlumnoDni">Nombre Alumno</string>
     <string name="horas">Horas</string>
     <string name="nombreProfesor">Profesor</string>
     <string name="codigoCod">Codigo</string>
+    <string name="notaString">Nota</string>
+    <string name="codigoNota">Codigo</string>
 
 </resources>

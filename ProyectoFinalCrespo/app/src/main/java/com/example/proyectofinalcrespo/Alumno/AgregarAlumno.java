@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,9 +13,10 @@ import com.example.proyectofinalcrespo.R;
 
 public class AgregarAlumno extends AppCompatActivity {
 
-    EditText nombreAumno,domicilioAlumno,apellidoAlumno,telefonoAlumno,dniAlumno;
-    TextView agregaAlumno;
-    DaoAlumno daoAlu;
+    private EditText nombreAumno,domicilioAlumno,apellidoAlumno,telefonoAlumno,dniAlumno;
+    private TextView agregaAlumno;
+    private DaoAlumno daoAlu;
+    private ImageView volver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class AgregarAlumno extends AppCompatActivity {
         dniAlumno = (EditText)findViewById(R.id.dni_alumno);
         telefonoAlumno = (EditText)findViewById(R.id.telefono_alumno);
         agregaAlumno = (TextView)findViewById(R.id.btn_agregar);
+        volver = (ImageView) findViewById(R.id.volver);
 
         daoAlu = new DaoAlumno(this);
 
@@ -46,6 +49,13 @@ public class AgregarAlumno extends AppCompatActivity {
                     Intent volverATodosAlu = new Intent(AgregarAlumno.this, Alumno.class);
                     startActivity(volverATodosAlu);
                 }
+            }
+        });
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentAlumno = new Intent(AgregarAlumno.this, Alumno.class);
+                startActivity(intentAlumno);
             }
         });
 

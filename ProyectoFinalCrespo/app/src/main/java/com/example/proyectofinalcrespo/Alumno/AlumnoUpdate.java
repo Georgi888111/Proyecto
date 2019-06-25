@@ -12,9 +12,9 @@ import com.example.proyectofinalcrespo.R;
 
 public class AlumnoUpdate extends AppCompatActivity {
 
-    EditText nombreAumno,domicilioAlumno,apellidoAlumno,telefonoAlumno,dniAlumno;
-    DaoAlumno daoAlu;
-    ImageView editar,eliminar;
+    private EditText nombreAumno,domicilioAlumno,apellidoAlumno,telefonoAlumno,dniAlumno;
+    private DaoAlumno daoAlu;
+    private ImageView editar,eliminar, volver;
 
 
     @Override
@@ -30,6 +30,7 @@ public class AlumnoUpdate extends AppCompatActivity {
         daoAlu = new DaoAlumno(this);
         editar = (ImageView)findViewById(R.id.imgEditar);
         eliminar =(ImageView)findViewById(R.id.imgEliminar);
+        volver = (ImageView) findViewById(R.id.volver);
 
 
         AlumnoModelo aluMode = (AlumnoModelo)getIntent().getExtras().getSerializable("Alumno");
@@ -82,6 +83,14 @@ public class AlumnoUpdate extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent vuelveAlumno = new Intent(AlumnoUpdate.this, Alumno.class);
+                startActivity(vuelveAlumno);
             }
         });
     }

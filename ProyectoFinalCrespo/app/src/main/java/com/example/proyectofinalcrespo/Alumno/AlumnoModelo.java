@@ -3,6 +3,7 @@ package com.example.proyectofinalcrespo.Alumno;
 import java.io.Serializable;
 
 public class AlumnoModelo implements Serializable {
+
     private String nombre;
     private String apellido;
     private int dni;

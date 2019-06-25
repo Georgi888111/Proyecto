@@ -9,30 +9,32 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import com.example.proyectofinalcrespo.Home;
 import com.example.proyectofinalcrespo.R;
 import java.util.ArrayList;
 
 public class Profesor extends AppCompatActivity {
 
-    ImageView agregar, buscar;
-    EditText busqueda;
-    ProfesoresAdapter adapter;
-    ListView listaProfesores;
-    ArrayList<ProfesorModelo>profesores = new ArrayList();
-    DaoProfesor daoProfe;
+    private ImageView agregar, buscar, volver;
+    private EditText busqueda;
+    private ProfesoresAdapter adapter;
+    private ListView listaProfesores;
+    private ArrayList<ProfesorModelo>profesores = new ArrayList();
+    private DaoProfesor daoProfe;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profesor);
+
         agregar = (ImageView)findViewById(R.id.imgAgregar);
         listaProfesores = (ListView) findViewById(R.id.todosProfesores);
         daoProfe = new DaoProfesor(this);
         profesores = daoProfe.mostrarTodos();
         busqueda = (EditText) findViewById(R.id.busqueda);
         buscar = (ImageView)findViewById(R.id.buscar);
-
+        volver = (ImageView) findViewById(R.id.volver);
 
         adapter = new ProfesoresAdapter(this,profesores);
         listaProfesores.setAdapter(adapter);
@@ -69,6 +71,14 @@ public class Profesor extends AppCompatActivity {
                 intentUpdateProfesor.putExtra("Profesor", profeMode);
                 startActivity(intentUpdateProfesor);
 
+            }
+        });
+
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent vuelveMenu = new Intent(Profesor.this, Home.class);
+                startActivity(vuelveMenu);
             }
         });
 

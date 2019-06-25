@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,14 +19,15 @@ import java.util.ArrayList;
 
 public class NotaUpdate extends AppCompatActivity {
 
-    ImageView editar,eliminar;
-    EditText nota,codigo;
-    Spinner muestraNombreMateria,muestraDniAlumno;
-    ArrayList<MateriaModelo> modemate;
-    ArrayList<AlumnoModelo> modealu;
-    ArrayList<String> infoNombreMateria;
-    ArrayList<String>infoAlumno;
-    DaoNota daoNota;
+    private ImageView editar,eliminar,volver;
+    private EditText nota,nombreAlumnoDni, codigo;
+    private Spinner muestraNombreMateria,muestraDniAlumno;
+    private ArrayList<MateriaModelo> modemate;
+    private ArrayList<AlumnoModelo> modealu;
+    private NotasSpinnerAdapter adapterSpinner;
+    private NotasSpinnerAdapterDos adapterDos;
+    private DaoNota daoNota;
+    private String inicializarItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,22 +40,51 @@ public class NotaUpdate extends AppCompatActivity {
         daoNota = new DaoNota(this);
         modealu = daoNota.retornaArrayAlumnos();
         modemate = daoNota.retornaArrayMaterias();
-        infoNombreMateria = obtenerListaMaterias();
-        codigo = (EditText) findViewById(R.id.codigoNota);
-        infoAlumno = obtenerListaAlumnos();
+        codigo = (EditText) findViewById(R.id.codigoCod);
+        nombreAlumnoDni = (EditText) findViewById(R.id.nombreAlumnoDni);
         muestraDniAlumno = (Spinner)findViewById(R.id.alumnosDni);
         muestraNombreMateria = (Spinner)findViewById(R.id.materiasNombres);
+        volver = (ImageView) findViewById(R.id.volver);
+
+
+        adapterSpinner = new NotasSpinnerAdapter(this, modealu);
+        muestraDniAlumno.setAdapter(adapterSpinner);
+        adapterDos = new NotasSpinnerAdapterDos(this,modemate);
+        muestraNombreMateria.setAdapter(adapterDos);
+
 
         NotaModelo notaMode = (NotaModelo) getIntent().getExtras().getSerializable("nota");
 
         nota.setText(String.valueOf(notaMode.getNota()));
         codigo.setText(String.valueOf(notaMode.getCodigo()));
 
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,infoNombreMateria);
-        muestraNombreMateria.setAdapter(adapter);
+        //inicializarItem = String.valueOf(notaMode.getDniAlu());
 
-        ArrayAdapter<CharSequence> adapterDos = new ArrayAdapter(this,android.R.layout.simple_spinner_item,infoAlumno);
-        muestraDniAlumno.setAdapter(adapterDos);
+
+        /*for (int i=0; i<muestraDniAlumno.getAdapter().getCount();i++){
+           if (muestraDniAlumno.getItemAtPosition(i).toString().equalsIgnoreCase(inicializarItem)) {
+               muestraDniAlumno.setSelection(i);
+               break;
+
+           }
+       }*/
+
+
+
+
+
+        muestraDniAlumno.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                nombreAlumnoDni.setText(modealu.get(position).getNombre() + " " + modealu.get(position).getApellido());
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //Another interface callback
+            }
+        });
 
         editar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +109,8 @@ public class NotaUpdate extends AppCompatActivity {
             }
         });
 
+
+
         eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,30 +127,18 @@ public class NotaUpdate extends AppCompatActivity {
 
             }
         });
+
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent volverNota = new Intent(NotaUpdate.this, Nota.class);
+                startActivity(volverNota);
+            }
+        });
     }
 
 
-    public ArrayList <String> obtenerListaMaterias(){
-        infoNombreMateria = new ArrayList();
-        infoNombreMateria.add(" ");
-        for(int i=0;i<modemate.size();i++){
-            infoNombreMateria.add(modemate.get(i).getDescripcion());
 
-        }
-        return infoNombreMateria;
-
-    }
-
-    public ArrayList <String> obtenerListaAlumnos(){
-        infoAlumno = new ArrayList();
-        infoAlumno.add(" ");
-        for(int i=0;i<modealu.size();i++){
-            infoAlumno.add(String.valueOf(modealu.get(i).getDni()));
-
-        }
-        return infoAlumno;
-
-    }
 
 
 }

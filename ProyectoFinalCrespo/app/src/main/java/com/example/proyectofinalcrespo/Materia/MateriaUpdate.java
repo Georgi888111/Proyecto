@@ -17,13 +17,13 @@ import com.example.proyectofinalcrespo.R;
 import java.util.ArrayList;
 
 public class MateriaUpdate extends AppCompatActivity {
-    Spinner muestraDniProf;
-    EditText descripcion, cantHoras,nombreProf, codigo;
-    ImageView editar,eliminar;
-    ArrayList<ProfesorModelo> profeMode;
-    ArrayList<String> infoProfesores;
-    ArrayAdapter<String> adapterSpinner;
-    DaoMateria daoMate;
+    private Spinner muestraDniProf;
+    private EditText descripcion, cantHoras,nombreProf, codigo;
+    private ImageView editar,eliminar, volver;
+    private ArrayList<ProfesorModelo> profeMode;
+    private DaoMateria daoMate;
+    private MateriaSpinnerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +38,10 @@ public class MateriaUpdate extends AppCompatActivity {
         eliminar = (ImageView)findViewById(R.id.imgEliminar);
         daoMate = new DaoMateria(this);
         profeMode = daoMate.retornaArrayProfesor();
-        infoProfesores = obtenerListaInfo();
+        volver = (ImageView) findViewById(R.id.volver);
 
-        adapterSpinner = new ArrayAdapter(this,R.layout.spinner_item,infoProfesores);
-        muestraDniProf.setAdapter(adapterSpinner);
+        adapter = new MateriaSpinnerAdapter(this,profeMode);
+        muestraDniProf.setAdapter(adapter);
 
         muestraDniProf.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -56,12 +56,20 @@ public class MateriaUpdate extends AppCompatActivity {
             }
         });
 
-
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent volverMateria = new Intent(MateriaUpdate.this, Materia.class);
+                startActivity(volverMateria);
+            }
+        });
         MateriaModelo mateMode = (MateriaModelo) getIntent().getExtras().getSerializable("Materia");
 
         descripcion.setText(mateMode.getDescripcion());
         cantHoras.setText(String.valueOf(mateMode.getCantHoras()));
         codigo.setText(String.valueOf(mateMode.getCodigo()));
+
+
 
 
         editar.setOnClickListener(new View.OnClickListener() {
@@ -105,16 +113,7 @@ public class MateriaUpdate extends AppCompatActivity {
         });
 
     }
-    public ArrayList <String> obtenerListaInfo(){
-        infoProfesores = new ArrayList();
 
-        for(int i=0;i<profeMode.size();i++){
-            infoProfesores.add(String.valueOf(profeMode.get(i).getDni()));
-
-        }
-        return infoProfesores;
-
-    }
 
 
 }

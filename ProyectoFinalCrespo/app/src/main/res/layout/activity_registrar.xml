@@ -91,7 +91,6 @@
         android:text="@string/btn_regis"
         android:textColor="@color/colorWhite"
         android:textSize="17sp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"

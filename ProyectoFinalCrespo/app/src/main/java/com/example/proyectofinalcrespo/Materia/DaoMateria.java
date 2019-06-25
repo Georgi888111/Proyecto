@@ -14,8 +14,8 @@ public class DaoMateria {
 
 
 
-        ArrayList<MateriaModelo> materias = new ArrayList();
-        ArrayList<ProfesorModelo>profesores= new ArrayList();
+        private ArrayList<MateriaModelo> materias = new ArrayList();
+        private ArrayList<ProfesorModelo>profesores= new ArrayList();
 
 
         public static final String NOMBRE_TABLA = "Materia";
@@ -106,6 +106,28 @@ public class DaoMateria {
     public int eliminar(int codigo){
 
         return db.delete(NOMBRE_TABLA,"codigo=?", new String []{String.valueOf(codigo)});
+    }
+
+
+    public MateriaModelo buscar(String codigo) {
+        MateriaModelo materiaModelo = new MateriaModelo();
+
+
+        Cursor c = db.rawQuery("SELECT * from Materia where codigo =" + codigo, null);
+        if (c.moveToFirst()) {
+            do {
+                materiaModelo.setCodigo(c.getInt(0));
+                materiaModelo.setDescripcion(c.getString(1));
+                materiaModelo.setCantHoras(c.getInt(2));
+                materiaModelo.setDniProf(c.getInt(3));
+
+
+            } while (c.moveToNext());
+
+
+        }
+        return materiaModelo;
+
     }
 
 }

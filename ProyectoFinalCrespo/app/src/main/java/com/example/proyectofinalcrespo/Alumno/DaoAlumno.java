@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class DaoAlumno {
 
-    ArrayList<AlumnoModelo>alumnos = new ArrayList();
+    private ArrayList<AlumnoModelo>alumnos = new ArrayList();
 
 
     public static final String NOMBRE_TABLA = "Alumno";

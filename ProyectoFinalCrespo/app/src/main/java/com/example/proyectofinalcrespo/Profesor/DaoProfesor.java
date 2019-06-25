@@ -8,7 +8,8 @@ import com.example.proyectofinalcrespo.DataBaseHelper;
 import java.util.ArrayList;
 
 public class DaoProfesor {
-    ArrayList<ProfesorModelo> profesores = new ArrayList();
+
+    private ArrayList<ProfesorModelo> profesores = new ArrayList();
 
 
     public static final String NOMBRE_TABLA = "Profesor";

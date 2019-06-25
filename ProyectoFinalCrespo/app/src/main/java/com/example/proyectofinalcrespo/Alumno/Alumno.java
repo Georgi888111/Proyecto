@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.proyectofinalcrespo.Home;
 import com.example.proyectofinalcrespo.R;
 
 import java.util.ArrayList;
@@ -18,12 +19,12 @@ public class Alumno extends AppCompatActivity {
 
 
 
-    ListView listaAlumnos;
-    ArrayList<AlumnoModelo> alumnos = new ArrayList();
-    DaoAlumno daoAlu;
-    ImageView agregar, eliminar ,editar, buscar;
-    EditText busqueda;
-    AlumnosAdapter adapter;
+    private ListView listaAlumnos;
+    private ArrayList<AlumnoModelo> alumnos = new ArrayList();
+    private DaoAlumno daoAlu;
+    private ImageView agregar, eliminar ,editar, buscar, volver;
+    private EditText busqueda;
+    private AlumnosAdapter adapter;
 
 
 
@@ -38,7 +39,7 @@ public class Alumno extends AppCompatActivity {
         editar = (ImageView)findViewById(R.id.imgEditar);
         busqueda = (EditText)findViewById(R.id.busqueda);
         buscar = (ImageView) findViewById(R.id.buscar);
-
+        volver = (ImageView)findViewById(R.id.volver);
         daoAlu = new DaoAlumno(this);
         alumnos = daoAlu.mostrarTodos();
 
@@ -76,6 +77,14 @@ public class Alumno extends AppCompatActivity {
               intentUpdateAlumono.putExtra("Alumno", alumnoMode);
               startActivity(intentUpdateAlumono);
 
+            }
+        });
+
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent vuelveHome = new Intent(Alumno.this, Home.class);
+                startActivity(vuelveHome);
             }
         });
 

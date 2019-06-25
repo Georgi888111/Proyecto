@@ -14,12 +14,12 @@ import com.example.proyectofinalcrespo.Usuario.Registrar;
 
 
 public class MainActivity extends AppCompatActivity {
-    TextView regis;
-    TextView inicia;
-    EditText usuario_log;
-    EditText contraseña_log;
-    TextView olvidoPassword;
-    DaoUsuario daoUsu;
+    private TextView regis;
+    private TextView inicia;
+    private EditText usuario_log;
+    private EditText contraseña_log;
+    private TextView olvidoPassword;
+    private DaoUsuario daoUsu;
 
 
     @Override

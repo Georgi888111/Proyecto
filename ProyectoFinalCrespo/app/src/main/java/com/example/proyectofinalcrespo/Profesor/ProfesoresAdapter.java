@@ -12,9 +12,10 @@ import com.example.proyectofinalcrespo.R;
 import java.util.ArrayList;
 
 public class ProfesoresAdapter extends ArrayAdapter {
+
     private Context context;
     private ArrayList <ProfesorModelo> profesores;
-    DaoProfesor daoProfe;
+    private DaoProfesor daoProfe;
 
     public ProfesoresAdapter(Context context, ArrayList <ProfesorModelo> profesores) {
         super(context, R.layout.titulo_listas, profesores);
@@ -27,6 +28,7 @@ public class ProfesoresAdapter extends ArrayAdapter {
 
 
     public View getView(int position, View convertView, ViewGroup parent) {
+
         profesores = daoProfe.mostrarTodos();
         LayoutInflater inflater = LayoutInflater.from(context);
         View item = inflater.inflate(R.layout.titulo_listas, null);
@@ -34,7 +36,9 @@ public class ProfesoresAdapter extends ArrayAdapter {
 
 
         TextView titulo = (TextView) item.findViewById(R.id.tituloItem);
-        titulo.setText(profesores.get(position).getNombre() + " "+ profesores.get(position).getApellido());
+        titulo.setText("     " + profesores.get(position).getNombre() + " "+ profesores.get(position).getApellido());
+        TextView codigo = (TextView)item.findViewById(R.id.codigoItem);
+        codigo.setText("" + profesores.get(position).getDni());
 
 
 
